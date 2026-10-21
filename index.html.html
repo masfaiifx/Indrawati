@@ -561,28 +561,6 @@ g("logout").onclick=async()=>{await flush();sb.auth.signOut()};
 pane("lgf");
 })();
 </script>
-<script>
-// HILANGKAN TOTAL kode panjang 689 karakter & pendekin link
-(function(){
-  function bersihkan(){
-    document.querySelectorAll('*').forEach(el=>{
-      // Hapus kotak "Kode soal untuk mahasiswa 689 karakter"
-      if(el.textContent && el.textContent.includes('Kode soal untuk mahasiswa')){
-        let box = el.closest('.card') || el.closest('div');
-        if(box) box.style.display = 'none';
-      }
-      // Pendekin link ?ujian=V2ey....
-      if(el.textContent && el.textContent.includes('Buka tautan ujian:')){
-        el.innerHTML = el.innerHTML.replace(
-          /https:\/\/indrawati-umgo\.vercel\.app\/\?ujian=[A-Za-z0-9\-_]+/g,
-          'https://indrawati-umgo.vercel.app'
-        );
-      }
-    });
-  }
-  setTimeout(bersihkan, 800);
-  setInterval(bersihkan, 2000);
-})();
-</script>
+
 </body>
 </html>
